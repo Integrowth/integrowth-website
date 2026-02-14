@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Unsere Lösungen | Integrowth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#008075",
+                        "accent-lime": "#88DE5F",
+                        "neutral-dark": "#2C3838",
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(44, 56, 56, 0.1);
+        }
+        .modal-backdrop {
+            background: rgba(14, 14, 14, 0.75);
+            backdrop-filter: blur(4px);
+        }
+        .modal-content {
+            background: rgba(255, 255, 255, 0.98);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .illustration-placeholder {
+            background: linear-gradient(135deg, #f2f2f2 0%, #e0e0e0 100%);
+            border: 2px dashed #008075;
+            min-height: 250px;
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black">INTEGROWTH</div>
+            <button class="px-6 py-2.5 bg-[#008075] text-white font-bold rounded-lg">JETZT STARTEN</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-[#2C3838] to-[#008075]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-black text-white mb-6">Wie können wir dir helfen?</h1>
+            <p class="text-xl text-white/80 max-w-3xl mx-auto">Entdecken Sie unsere Lösungen, die Ihre Prozesse digitalisieren und automatisieren.</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-[#88DE5F]/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-[#008075]">calendar_month</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Event-Management Coding</h3>
+                    <p class="text-gray-600 mb-6">Maßgeschneiderte Event-Management-Lösungen für Ihre Veranstaltungen.</p>
+                    <button onclick="openModal('event')" class="px-6 py-2.5 bg-[#88DE5F] text-[#2C3838] font-bold rounded-lg">Mehr erfahren →</button>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-[#88DE5F]/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-[#008075]">assignment</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Projektmanagement</h3>
+                    <p class="text-gray-600 mb-6">Optimierte Workflows für effizientes Projektmanagement.</p>
+                    <button onclick="openModal('projekt')" class="px-6 py-2.5 bg-[#88DE5F] text-[#2C3838] font-bold rounded-lg">Mehr erfahren →</button>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-[#88DE5F]/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-[#008075]">groups</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">CRM Schnittstellen Aufbau</h3>
+                    <p class="text-gray-600 mb-6">Nahtlose CRM-Integrationen für besseres Kundenmanagement.</p>
+                    <button onclick="openModal('crm')" class="px-6 py-2.5 bg-[#88DE5F] text-[#2C3838] font-bold rounded-lg">Mehr erfahren →</button>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-[#88DE5F]/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-[#008075]">sync_alt</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Daten-Optimierung Migration</h3>
+                    <p class="text-gray-600 mb-6">Sicherer Datentransfer mit optimierter Struktur.</p>
+                    <button onclick="openModal('daten')" class="px-6 py-2.5 bg-[#88DE5F] text-[#2C3838] font-bold rounded-lg">Mehr erfahren →</button>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-[#88DE5F]/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-[#008075]">receipt_long</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Rechnungsmanagement</h3>
+                    <p class="text-gray-600 mb-6">Automatisierte Rechnungsprozesse für effiziente Buchhaltung.</p>
+                    <button onclick="openModal('rechnung')" class="px-6 py-2.5 bg-[#88DE5F] text-[#2C3838] font-bold rounded-lg">Mehr erfahren →</button>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-[#88DE5F]/20 rounded-xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl text-[#008075]">language</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Website-Optimierung Migration</h3>
+                    <p class="text-gray-600 mb-6">Modernisierte Websites mit verbesserter Performance.</p>
+                    <button onclick="openModal('website')" class="px-6 py-2.5 bg-[#88DE5F] text-[#2C3838] font-bold rounded-lg">Mehr erfahren →</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Case Studies Slider -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold">Bisherige Kundenerfolge</h2>
+                <div class="flex gap-4">
+                    <button onclick="prevCase()" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-[#008075] hover:text-white transition-all">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button onclick="nextCase()" class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-[#008075] hover:text-white transition-all">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative overflow-hidden">
+                <div class="flex transition-transform duration-500" id="case-track">
+                    <!-- PraiseCamp -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-gray-50 p-12 rounded-3xl">
+                            <h3 class="text-2xl font-bold mb-2 text-center">PraiseCamp</h3>
+                            <p class="text-lg font-semibold text-[#008075] mb-6 text-center">Revolutionierte Eventprozesse durch intelligente Automatisierung</p>
+                            <p class="text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
+                                Das PraiseCamp ist eines der grössten Jugendlager der Schweiz mit über 7000 Teilnehmenden. Die Organisation bringt junge Menschen aus der ganzen Schweiz zusammen, um Glaube, Gemeinschaft und Musik zu erleben.
+                            </p>
+                            <div class="text-center">
+                                <button class="px-8 py-3 bg-[#88DE5F] font-bold rounded-lg">Case Study lesen</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEA Charta -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="bg-gray-50 p-12 rounded-3xl">
+                            <h3 class="text-2xl font-bold mb-2 text-center">SEA Charta-Verwaltung</h3>
+                            <p class="text-lg font-semibold text-[#008075] mb-6 text-center">Effiziente Charta-Verwaltung dank automatisierter Workflows</p>
+                            <p class="text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
+                                Die Schweizerische Evangelische Allianz (SEA) ist eine nationale Plattform, die Kirchen, Werke und Einzelpersonen vernetzt. Ein Teil ihres Engagements ist die Charta für christliche Kinder- und Jugendarbeit.
+                            </p>
+                            <div class="text-center">
+                                <button class="px-8 py-3 bg-[#88DE5F] font-bold rounded-lg">Case Study lesen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-br from-[#2C3838] to-[#008075]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-black text-white mb-6">Bereit fürs nächste Level?</h2>
+            <p class="text-xl text-white/70 mb-10">Kontaktieren Sie uns und starten Sie Ihre digitale Transformation.</p>
+            <button class="px-12 py-5 bg-[#88DE5F] text-[#2C3838] font-black rounded-xl hover:scale-105 transition-transform">JETZT STARTEN</button>
+        </div>
+    </section>
+    <!-- Modals Container -->
+    <div id="modal-container"></div>
+
+    <script>
+        let currentCase = 0;
+        const totalCases = 2;
+
+        function nextCase() {
+            currentCase = (currentCase + 1) % totalCases;
+            updateCaseSlider();
+        }
+
+        function prevCase() {
+            currentCase = (currentCase - 1 + totalCases) % totalCases;
+            updateCaseSlider();
+        }
+
+        function updateCaseSlider() {
+            const track = document.getElementById('case-track');
+            track.style.transform = `translateX(-${currentCase * 100}%)`;
+        }
+
+        const modalData = {
+            event: {
+                title: 'Event-Management Coding',
+                icon: 'calendar_month',
+                desc: 'Maßgeschneiderte Event-Management-Lösungen. Ob Buchung, Registrierung oder Event-Verwaltung.',
+                features: ['Ticket-Verkaufssysteme', 'Teilnehmerverwaltung', 'Event-Tracking', 'Automatisierte Benachrichtigungen'],
+                benefits: 'Spart Zeit und reduziert manuelle Arbeit bei der Event-Organisation.'
+            },
+            projekt: {
+                title: 'Projektmanagement',
+                icon: 'assignment',
+                desc: 'Optimierte Workflows durch smarte Projektmanagement-Tools.',
+                features: ['Task-Automatisierung', 'Team-Kollaboration', 'Progress-Tracking', 'Ressourcenverwaltung'],
+                benefits: 'Verbesserte Effizienz und Transparenz in allen Projekten.'
+            },
+            crm: {
+                title: 'CRM Schnittstellen Aufbau',
+                icon: 'groups',
+                desc: 'Nahtlose Kundenintegrationen mit maßgeschneiderten CRM-Lösungen.',
+                features: ['API-Integrationen', 'Datensynchronisation', 'Kundendatenbank-Aufbau', 'Automatisierte Workflows'],
+                benefits: 'Besseres Kundenmanagement und zentrale Datenverwaltung.'
+            },
+            daten: {
+                title: 'Daten-Optimierung Migration',
+                icon: 'sync_alt',
+                desc: 'Sicherer und verlustfreier Datentransfer zwischen Plattformen.',
+                features: ['Datenbereinigung', 'Strukturoptimierung', 'Sichere Migration', 'Validierung'],
+                benefits: 'Optimierte Datenstruktur für bessere Performance.'
+            },
+            rechnung: {
+                title: 'Rechnungsmanagement',
+                icon: 'receipt_long',
+                desc: 'Automatisieren Sie Ihre Rechnungsprozesse.',
+                features: ['Automatische Rechnungserstellung', 'E-Mail-Versand', 'Zahlungstracking', 'Buchhaltungsintegration'],
+                benefits: 'Zeitersparnis und reduzierte Fehlerquote in der Buchhaltung.'
+            },
+            website: {
+                title: 'Website-Optimierung Migration',
+                icon: 'language',
+                desc: 'Modernisieren Sie Ihre Website mit besserer Performance.',
+                features: ['Performance-Optimierung', 'SEO-Verbesserung', 'Responsive Design', 'CMS-Migration'],
+                benefits: 'Schnellere Ladezeiten und bessere User Experience.'
+            }
+        };
+
+        function openModal(type) {
+            const data = modalData[type];
+            const modal = `
+                <div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop" onclick="closeModal(event)">
+                    <div class="modal-content rounded-3xl p-8 max-w-4xl w-full shadow-2xl" onclick="event.stopPropagation()">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-16 h-16 bg-[#88DE5F]/20 rounded-xl flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-4xl text-[#008075]">${data.icon}</span>
+                                </div>
+                                <h2 class="text-3xl font-bold">${data.title}</h2>
+                            </div>
+                            <button onclick="closeModal()" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-all">
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                        </div>
+
+                        <div class="illustration-placeholder mb-6 flex items-center justify-center">
+                            <p class="text-gray-400 text-center px-8">
+                                <span class="material-symbols-outlined text-6xl text-[#008075] mb-4 block">image</span>
+                                Illustration Platzhalter<br/>
+                                <span class="text-sm">(Hier kommt die spezifische Illustration)</span>
+                            </p>
+                        </div>
+
+                        <p class="text-lg text-gray-700 mb-6">${data.desc}</p>
+
+                        <h3 class="font-bold text-xl mb-4">Features:</h3>
+                        <ul class="space-y-2 mb-6">
+                            ${data.features.map(f => `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-[#88DE5F] mt-0.5">check_circle</span><span>${f}</span></li>`).join('')}
+                        </ul>
+
+                        <div class="bg-[#008075]/5 p-6 rounded-xl mb-6">
+                            <h3 class="font-bold text-xl mb-2">Vorteile:</h3>
+                            <p class="text-gray-700">${data.benefits}</p>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <button class="px-8 py-3 bg-[#88DE5F] font-bold rounded-lg hover:bg-[#88DE5F]/90 transition-all">Jetzt anfragen</button>
+                            <button onclick="closeModal()" class="px-8 py-3 border-2 border-gray-300 font-bold rounded-lg hover:bg-gray-50 transition-all">Schließen</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-container').innerHTML = modal;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.classList.contains('modal-backdrop')) {
+                document.getElementById('modal-container').innerHTML = '';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
